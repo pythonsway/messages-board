@@ -1,0 +1,45 @@
+venv/
+.env
+.vscode/
+_temp/
+bash.exe.stackdump
+
+*.pyc
+__pycache__/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+# build/
+*.egg-info/
+
+*.log
+db.sqlite3
+
+_unUsed/
+
+# Frontend
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+my-app/src/views/temp.py
+my-app/src/temp.js
