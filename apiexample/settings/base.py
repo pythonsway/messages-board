@@ -148,6 +148,8 @@ USE_TZ = True
 # compression support
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'frontend', 'build')
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 # The URL to use when referring to static files (where they will be served from)
