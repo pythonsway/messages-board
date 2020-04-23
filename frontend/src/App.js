@@ -17,6 +17,7 @@ import CreateView from './views/CreateView';
 import DetailView from './views/DetailView';
 import Profile from './views/Profile';
 import ListView from './views/ListView';
+import Login from './views/Login';
 
 const App = () => {
   // const history = useHistory();
@@ -62,6 +63,9 @@ const App = () => {
           <Switch>
             <Route exact path='/'>
               <ListView />
+            </Route>
+            <Route exact path='/login'>
+              <Login />
             </Route>
             <PrivateRoute exact path='/profile'>
               <Profile />

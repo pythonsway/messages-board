@@ -148,33 +148,18 @@ USE_TZ = True
 # compression support
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# assets served at the root
 WHITENOISE_ROOT = os.path.join(BASE_DIR, 'frontend', 'build')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-# for whitenoise
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # update the STATICFILES_DIRS
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'frontend', 'build', 'static'),
 )
-
-
-# REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
-# STATICFILES_DIRS = [os.path.join(REACT_APP_DIR, 'build', 'static'),]
-
-# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "deployment", "collected_static")
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "my_app", "static"),)
-
-# When React builds path will be `/static/css/...` so we will have Django Serve In Production,
-# it's recommended use an alternative approach such as:
-# http://whitenoise.evans.io/en/stable/django.html?highlight=django
-# Place static in the same location as webpack build files
-# STATIC_ROOT = os.path.join(BASE_DIR, 'build', 'static')
-# STATICFILES_DIRS = []
-
