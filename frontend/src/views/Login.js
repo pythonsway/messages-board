@@ -1,10 +1,16 @@
 import React from 'react';
 
 import { useAuth0 } from '../utils/react-auth0-spa';
+import history from './utils/history';
 import Loading from '../components/Loading';
 
-const Profile = () => {
-  const { loading, user, loginWithRedirect } = useAuth0();
+const Login = () => {
+  const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push('/');
+    }
+  }, [isAuthenticated]);
 
   if (loading) return <Loading />;
 
@@ -25,4 +31,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Login;
