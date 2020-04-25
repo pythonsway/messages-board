@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useAuth0 } from '../utils/react-auth0-spa';
-import history from './utils/history';
+import history from '../utils/history';
 import Loading from '../components/Loading';
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
             <h3 className="card-title text-center">{}</h3>
           </div>
           <button onClick={() => loginWithRedirect({})} className="btn btn-secondary">
-            Login
+            Login via Auth0
         </button>
         </div>
       </div>

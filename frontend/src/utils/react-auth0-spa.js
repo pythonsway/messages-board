@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import createAuth0Client from '@auth0/auth0-spa-js';
 
-const DEFAULT_REDIRECT_CALLBACK = () =>
-  window.history.replaceState({}, document.title, window.location.pathname);
+import history from "./history";
 
+
+const DEFAULT_REDIRECT_CALLBACK = () =>
+  // window.history.replaceState({}, document.title, window.location.pathname);
+  history.replace(window.location.pathname);
+  
 export const Auth0Context = React.createContext();
 // provides the functions needed to login, logout
 export const useAuth0 = () => useContext(Auth0Context);
@@ -23,7 +27,10 @@ export const Auth0Provider = ({
       const auth0FromHook = await createAuth0Client(initOptions);
       setAuth0(auth0FromHook);
 
-      if (window.location.search.includes('code=')) {
+      if (
+        window.location.search.includes('code=') &&
+        window.location.search.includes('state=')
+      ) {
         const { appState } = await auth0FromHook.handleRedirectCallback();
         onRedirectCallback(appState);
       }

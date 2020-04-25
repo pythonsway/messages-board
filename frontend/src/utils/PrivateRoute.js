@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Redirect, useParams } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import { useAuth0 } from './react-auth0-spa';
 

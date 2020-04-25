@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { BatchHttpLink } from 'apollo-link-batch-http';
@@ -79,6 +79,7 @@ const App = () => {
             <PrivateRoute exact path='/messages/:id'>
               <DetailView />
             </PrivateRoute>
+            <Redirect exact from='/messages' to='/' />
             <Route >
               <NoMatch />
             </Route>
