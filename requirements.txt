@@ -33,7 +33,7 @@ psycopg2-binary==2.8.5
 py==1.8.1
 pycodestyle==2.5.0
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyparsing==2.4.7
 pytest==5.4.1
 pytest-cov==2.8.1
